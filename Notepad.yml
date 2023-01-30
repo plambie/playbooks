@@ -1,7 +1,10 @@
 - name: install notepad++
 
   hosts: all
-  win_package:
+  gather_facts: true
+  
+  tasks:
+-  win_package:
     path: 'etc/ansible/installers/npp.8.4.7.Installer.exe'
 
     creates_path: 'C:\Program Files (x86)\Notepad++\'
