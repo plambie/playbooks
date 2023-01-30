@@ -1,12 +1,4 @@
-- name: install notepad++
-
-  hosts: all
-  gather_facts: true
-  
-  tasks:
--  win_package:
-    path: 'etc/ansible/installers/npp.8.4.7.Installer.exe'
-
-    creates_path: 'C:\Program Files (x86)\Notepad++\'
-    state: present 
-    arguments: /passive /nocontentupdate
+- name: Run a command under cmd
+  win_shell: mkdir C:\temp
+  args:
+    executable: cmd.exe
