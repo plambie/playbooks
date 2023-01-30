@@ -3,15 +3,15 @@
   gather_facts: true
 
   tasks:
-  name: Notepad ++ Install
-  ansible.windows.win_package:
-    path: \\dc.PETELAB.LOCAL\installers\NP.exe
-    product_id: Notepad++
-    arguments: /S
-    state: present
-  become: yes
-  become_method: runas
-  become_flags: logon_type=new_credential logon_flags=netcredentials_only
-  vars:
-    ansible_become_user: PETELAB\plambie-admin
-    ansible_become_password: DCP4ssword
+
+  - ansible.windows.win_package:
+      path: \\dc.PETELAB.LOCAL\installers\NP.exe
+      product_id: Notepad++
+      arguments: /S
+      state: present
+        become: yes
+          become_method: runas
+          become_flags: logon_type=new_credential logon_flags=netcredentials_only
+          vars:
+            ansible_become_user: PETELAB\plambie-admin
+            ansible_become_password: DCP4ssword
