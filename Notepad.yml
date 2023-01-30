@@ -1,4 +1,12 @@
-- name: Run a command under cmd
-  win_shell: mkdir C:\temp
-  args:
-    executable: cmd.exe
+- name: Install Notepad++ from a network share with specific credentials
+  ansible.windows.win_package:
+    path: \\dc.petelab.local\programs\NP.exe
+    product_id: Notepad++
+    arguments: /S
+    state: present
+  become: yes
+  become_method: runas
+  become_flags: logon_type=new_credential logon_flags=netcredentials_only
+  vars:
+    ansible_become_user: pete.local\plambie-admin
+    ansible_become_password: DCP4ssword
