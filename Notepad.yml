@@ -1,4 +1,7 @@
 - name: Install Notepad++ from a network share with specific credentials
+  hosts: all
+  gather_facts: true
+
   ansible.windows.win_package:
     path: \\dc.PETELAB.LOCAL\installers\NP.exe
     product_id: Notepad++
