@@ -1,17 +1,13 @@
-- name: Install Notepad++ from a network share with specific credentials
+---
+- name: Notepad++ installation Playbook
   hosts: all
-  gather_facts: true
-
   tasks:
-
-  - ansible.windows.win_package:
-      path: \\dc.PETELAB.LOCAL\installers\NP.exe
-      product_id: Notepad++
-      arguments: /S
-      state: present
-        become: yes
-          become_method: runas
-          become_flags: logon_type=new_credential logon_flags=netcredentials_only
-          vars:
-            ansible_become_user: PETELAB\plambie-admin
-            ansible_become_password: DCP4ssword
+   - name: Installing Notepad++
+     win_package:
+       path: '\\dc.PETELAB.LOCAL\installers\NP.exe'
+       arguments: '/S'
+       product_id: 'Notepad++'
+       creates_version: '8.7.4'
+       creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
+       state: present
+     when: ansible_os_family == 'Windows'
