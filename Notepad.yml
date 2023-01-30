@@ -3,7 +3,7 @@
   gather_facts: true
 
   tasks:
-  -name: Notepad ++ Install
+  name: Notepad ++ Install
   ansible.windows.win_package:
     path: \\dc.PETELAB.LOCAL\installers\NP.exe
     product_id: Notepad++
