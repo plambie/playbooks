@@ -8,5 +8,5 @@
   become_method: runas
   become_flags: logon_type=new_credential logon_flags=netcredentials_only
   vars:
-    ansible_become_user: PETELAB.LOCAL\plambie-admin
+    ansible_become_user: PETELAB\plambie-admin
     ansible_become_password: DCP4ssword
