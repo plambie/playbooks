@@ -2,12 +2,12 @@
 - name: Notepad++ installation Playbook
   hosts: all
   tasks:
-
-    win_package:
-         path: 'c:\temp\NP.exe'
-         arguments: '/S'
-         product_id: 'Notepad++'
-         creates_version: '8.7.4'
-         creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
-         state: present
-       #when: ansible_os_family == 'Windows'
+   - name: Installing Notepad++
+     win_package:
+       path: 'c:\temp\NP.exe'
+       arguments: '/S'
+       product_id: 'Notepad++'
+       creates_version: '8.7.4'
+       creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
+       state: present
+     when: ansible_os_family == 'Windows'
