@@ -4,7 +4,7 @@
   tasks:
    - name: Installing Notepad++
      win_package:
-       path: '\\dc.PETELAB.LOCAL\installers\NP.exe'
+       path: 'c:\temp\NP.exe'
        arguments: '/S'
        product_id: 'Notepad++'
        creates_version: '8.7.4'
