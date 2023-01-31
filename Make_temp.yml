@@ -7,6 +7,6 @@
     mydir: 'C:\temp'
   tasks:
     - name: Create a directory
-      ansible.windows.win_file:
+      win_file:
         path: "{{ mydir }}"
         state: directory
