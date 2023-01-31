@@ -11,5 +11,5 @@
     
     - name: Copy file locally    
       win_copy:
-        src: \\DC.PETELAB.LOCAL\\installers\\NP.exe
+        src: smb://DC.PETELAB.LOCAL/installers/NP.exe
         dest: C:\Temp\NP.exe
