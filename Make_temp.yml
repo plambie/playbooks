@@ -1,12 +1,13 @@
 ---
 - name: win_file module demo
-- hosts: all
+
   collections:
     - ansible.windows
   vars:
     mydir: 'C:\temp'
   tasks:
     - name: Create a directory
+    - hosts: all
       win_file:
         path: "{{ mydir }}"
         state: directory
