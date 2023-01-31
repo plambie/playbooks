@@ -3,21 +3,19 @@
   hosts: all
   tasks:
   - name: Create directory structure
-  ansible.windows.win_file:
-    path: C:\Temp\
-    state: directory
+      ansible.windows.win_file:
+         path: C:\Temp\
+         state: directory
     
+      ansible.windows.win_copy:
+         src: \\DC.PETELAB.LOCAL\Installer\NP.exe
+         dest: C:\Temp\NP.exe
   
-  ansible.windows.win_copy:
-    src: \\DC.PETELAB.LOCAL\Installer\NP.exe
-    dest: C:\Temp\NP.exe
-  
-  
-     win_package:
-       path: 'c:\temp\NP.exe'
-       arguments: '/S'
-       product_id: 'Notepad++'
-       creates_version: '8.7.4'
-       creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
-       state: present
-     when: ansible_os_family == 'Windows'
+    win_package:
+         path: 'c:\temp\NP.exe'
+         arguments: '/S'
+         product_id: 'Notepad++'
+         creates_version: '8.7.4'
+         creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
+         state: present
+       when: ansible_os_family == 'Windows'
