@@ -1,4 +1,9 @@
-- name: Create directory structure
-    ansible.windows.win_file:
-      path: C:\Temp
-      state: directory
+---
+- name: create temp
+  hosts: all
+  tasks:
+    - name: Create directory structure
+      ansible.windows.win_file:
+        path: C:\Temp
+        state: directory
+      when: ansible_os_family == 'Windows'
