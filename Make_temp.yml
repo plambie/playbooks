@@ -1,5 +1,5 @@
 ---
-- name: win_file module demo
+- name: win_file copy installer from DC Share
   hosts: all
   collections:
     - ansible.windows
@@ -11,7 +11,12 @@
     
     - name: Copy file locally    
       win_copy:
-        src: DC.PETELAB.LOCAL\installers\NP.exe
+        src: \\DC.PETELAB.LOCAL\installers\NP.exe
         dest: c:\temp\NP.exe
         remote_src: True
-        
+        become: True
+        become_method: runas
+        become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+      vars:
+        ansible_become_user: plambie-admin
+        ansible_become_pass: DCP4ssword
