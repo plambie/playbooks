@@ -10,4 +10,5 @@
 
     - name: Install notepad++ executable
       win_command:
-      cmd: 'C:\temp\npp.8.4.9.Installer.x64.exe /s'
+      cmd: '"C:\temp\npp.8.4.9.Installer.x64.exe" "/s"'
+    
