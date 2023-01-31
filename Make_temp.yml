@@ -4,12 +4,12 @@
   collections:
     - ansible.windows
   tasks:
-    - name: Create a directory
-
+    - name: Create a local directory
       win_file:
         path: C:\temp
         state: directory
-        
+    
+    - name: Copy file locally    
       win_copy:
         src: \\DC.PETELAB.LOCAL\\installers\\NP.exe
         dest: C:\Temp\NP.exe
