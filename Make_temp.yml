@@ -1,6 +1,6 @@
 ---
 - name: win_file module demo
-- hosts: all
+  hosts: all
   collections:
     - ansible.windows
   tasks:
