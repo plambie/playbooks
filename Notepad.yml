@@ -7,12 +7,12 @@
     path: C:\Temp\
     state: directory
     
-   - name: Copy a single file
+  
   ansible.windows.win_copy:
     src: \\DC.PETELAB.LOCAL\Installer\NP.exe
     dest: C:\Temp\NP.exe
   
-   - name: Installing Notepad++
+  
      win_package:
        path: 'c:\temp\NP.exe'
        arguments: '/S'
