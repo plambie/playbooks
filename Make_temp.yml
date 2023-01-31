@@ -12,7 +12,7 @@
     - name: Copy file locally    
       win_copy:
         src: '\\DC.PETELAB.LOCAL\installers\NP.exe'
-        dest: 'NP.exe'
+        dest: 'c:\NP.exe'
         remote_src: True
         become: True
         become_method: runas
