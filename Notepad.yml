@@ -10,4 +10,4 @@
          creates_version: '8.7.4'
          creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
          state: present
-       when: ansible_os_family == 'Windows'
+       #when: ansible_os_family == 'Windows'
