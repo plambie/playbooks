@@ -9,3 +9,8 @@
       win_file:
         path: C:\temp
         state: directory
+        
+   - name: Copy a single file
+       win_copy:
+         src: smb://DC.PETELAB.LOCAL/installers/NP.exe
+         dest: C:\Temp\NP.exe
