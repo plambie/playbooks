@@ -1,9 +1,10 @@
 ---
-- name: create temp
+- name: win_file module demo
   hosts: all
+  vars:
+    mydir: 'C:\temp'
   tasks:
-    - name: Create directory structure
+    - name: Create a directory
       ansible.windows.win_file:
-        path: C:\Temp
+        path: "{{ mydir }}"
         state: directory
-      when: ansible_os_family == 'Windows'
