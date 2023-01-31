@@ -2,7 +2,7 @@
 - name: Create temp folder
   hosts: all
   tasks:
-  - name: Create directory structure
-      ansible.windows.win_file:
-        path: C:\Temp\
-        state: directory
+    - name: Create directory structure
+        ansible.windows.win_file:
+          path: C:\Temp\
+          state: directory
