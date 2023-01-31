@@ -5,7 +5,7 @@
     - ansible.windows
   tasks:
     - name: Create a directory
-    - hosts: all
+
       win_file:
         path: C:\temp
         state: directory
