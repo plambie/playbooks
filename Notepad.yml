@@ -2,15 +2,7 @@
 - name: Notepad++ installation Playbook
   hosts: all
   tasks:
-  - name: Create directory structure
-      ansible.windows.win_file:
-         path: C:\Temp\
-         state: directory
-    
-      ansible.windows.win_copy:
-         src: \\DC.PETELAB.LOCAL\Installer\NP.exe
-         dest: C:\Temp\NP.exe
-  
+
     win_package:
          path: 'c:\temp\NP.exe'
          arguments: '/S'
