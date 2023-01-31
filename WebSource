@@ -1,0 +1,14 @@
+---
+- name: Install Notepad from an exe 
+  hosts: all 
+ 
+  tasks:
+    - name: Download the Apache installer
+      win_get_url:
+        url: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.4.9/npp.8.4.9.Installer.x64.exe'
+        dest: 'C:\temp\npp.8.4.9.Installer.x64.exe'
+
+    - name: Install MSI
+      win_package: 
+        path: 'C:\Users\Administrator\Downloads\npp.8.4.9.Installer.x64.exe'
+        state: present
