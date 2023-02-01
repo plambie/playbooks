@@ -14,11 +14,7 @@
         win_mapped_drive:
           letter: I
           path: \\DC.PETELAB.LOCAL\installers
-          state: absent
-      
+          state: present
 
-#   - name: Download the MS Edge installer
-#     win_shell: 'copy I:\MicrosoftEdgeSetup.exe c:\temp'
-
-    - name: Install MS Edge from c:\temp executable
+    - name: Install MS Edge from mapped drive executable
       win_shell: 'I:\MicrosoftEdgeSetup.exe /silent /install'
