@@ -16,5 +16,5 @@
         dest: 'C:\temp\npp.8.4.9.Installer.x64.exe'
 
     - name: Install notepad++ executable
-      win_shell: '"C:\temp\npp.8.4.9.Installer.x64.exe" "/S"'
+      win_shell: "C:\temp\npp.8.4.9.Installer.x64.exe /S"
     
