@@ -10,12 +10,15 @@
         path: C:\temp
         state: directory
         
+    - name: Map I drive to installers area
+        win_mapped_drive:
+          letter: I
+          path: \\DC.PETELAB.LOCAL\installers
+          state: absent
+      
 
-    - name: Map x drive to installers area
-      win_command: 'Net Use I: \\DC.PETELAB.LOCAL\installers'
-
-    - name: Download the MS Edge installer
-      win_shell: 'copy I:\MicrosoftEdgeSetup.exe c:\temp'
+#   - name: Download the MS Edge installer
+#     win_shell: 'copy I:\MicrosoftEdgeSetup.exe c:\temp'
 
     - name: Install MS Edge from c:\temp executable
-      win_shell: 'MicrosoftEdgeSetup.exe /silent /install'
+      win_shell: 'I:\MicrosoftEdgeSetup.exe /silent /install'
