@@ -9,11 +9,12 @@
       win_file:
         path: C:\temp
         state: directory
-        
-    - name: Map I drive to installers area
-        win_mapped_drive:
-          letter: I
-          path: \\DC.PETELAB.LOCAL\installers
+    
+    - name: robocopy    
+      win_robocopy:
+          src: \\DC.PETELAB.LOCAL\installers
+          dest: C:\temp
+          flags: * /E /PURGE /XD SOME_DIR /XF SOME_FILE /MT:32
 
     - name: Install MS Edge from mapped drive executable
-      win_shell: 'I:\MicrosoftEdgeSetup.exe /silent /install'
+      win_shell: 'C:\temp\MicrosoftEdgeSetup.exe /silent /install'
