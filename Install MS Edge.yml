@@ -1,0 +1,19 @@
+---
+- name: Install Microsft Edge from an exe held on local server
+  hosts: all 
+ 
+  collections:
+    - ansible.windows
+  tasks:
+    - name: Create a local directory
+      win_file:
+        path: C:\temp
+        state: directory
+
+    - name: Download the MS Edge installer
+      win_copy:
+        src: '\\DC.PETELAB.LOCAL\installers\MicrosoftEdgeSetup.exe'
+        dest: 'C:\temp\MicrosoftEdgeSetup.exe'
+
+    - name: Install MS Edge from c:\temp executable
+      win_shell: 'MicrosoftEdgeSetup.exe /silent /install'
