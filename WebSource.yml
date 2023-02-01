@@ -9,8 +9,7 @@
       win_file:
         path: C:\temp
         state: directory
- 
- tasks:
+
     - name: Download the Apache installer
       win_get_url:
         url: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.4.9/npp.8.4.9.Installer.x64.exe'
