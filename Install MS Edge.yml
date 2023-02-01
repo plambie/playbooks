@@ -11,9 +11,7 @@
         state: directory
 
     - name: Download the MS Edge installer
-      win_copy:
-        src: '\\DC.PETELAB.LOCAL\installers\MicrosoftEdgeSetup.exe'
-        dest: 'C:\temp\MicrosoftEdgeSetup.exe'
+      win_shell: 'copy \\DC.PETELAB.LOCAL\installers\MicrosoftEdgeSetup.exe c:\temp'
 
     - name: Install MS Edge from c:\temp executable
       win_shell: 'MicrosoftEdgeSetup.exe /silent /install'
