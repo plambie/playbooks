@@ -12,18 +12,10 @@
         
 
     - name: Map x drive to installers area
-      win_shell: 'Net Use I: \\DC.PETELAB.LOCAL\installers'
-      remote_src: True
-        become: True
-        become_method: runas
-        become_flags: logon_type=new_credentials logon_flags=netcredentials_only
-      vars:
-        ansible_become_user: PETELAB\plambie-admin
-        ansible_become_pass: DCP4ssword
-        
+      win_command: 'Net Use I: \\DC.PETELAB.LOCAL\installers'
 
     - name: Download the MS Edge installer
-      win_shell: 'copy X:\MicrosoftEdgeSetup.exe c:\temp'
+      win_shell: 'copy I:\MicrosoftEdgeSetup.exe c:\temp'
 
     - name: Install MS Edge from c:\temp executable
       win_shell: 'MicrosoftEdgeSetup.exe /silent /install'
