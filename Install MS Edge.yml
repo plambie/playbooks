@@ -17,5 +17,5 @@
           flags: MicrosoftEdgeSetup.exe /E /PURGE /XD SOME_DIR /XF SOME_FILE /MT:32
 
     - name: Install MS Edge from mapped drive executable
-      win_shell: 'C:\temp\MicrosoftEdgeSetup.exe /silent /install'
-      | $ErrorActionPreference = 'Continue'
+      win_shell: "C:\temp\MicrosoftEdgeSetup.exe /silent /install | $ErrorActionPreference = 'Continue'"
+      
